@@ -1,0 +1,27 @@
+[
+  {
+    "_id": "1",
+    "name": "Angular",
+    "category": "Front-end"
+  },
+  {
+    "_id": "2",
+    "name": "Java",
+    "category": "Back-end"
+  },
+  {
+    "_id": "3",
+    "name": "Spring Boot",
+    "category": "Back-end"
+  },
+  {
+    "_id": "4",
+    "name": "Node.js",
+    "category": "Back-end"
+  },
+  {
+    "_id": "5",
+    "name": "React",
+    "category": "Front-end"
+  }
+]
