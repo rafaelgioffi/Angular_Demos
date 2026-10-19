@@ -19,7 +19,7 @@ export class CoursesService {
     //pipe é um tunelamento dos dados. serve para manipular e transformar os dados.
     .pipe(
       first(), //pega o primeiro valor emitido e completa a stream
-      delay(3000),
+      delay(1000),
       tap(courses => console.log(courses))
     );
   }
