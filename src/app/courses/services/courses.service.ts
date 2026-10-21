@@ -9,7 +9,7 @@ import { delay, first, tap } from 'rxjs/operators';
 })
 export class CoursesService {
 
-  private readonly API = '/assets/courses.json';
+  private readonly API = 'api/courses';
 
   //injeção de dependência...
   constructor(private httpClient: HttpClient) { }
@@ -19,7 +19,7 @@ export class CoursesService {
     //pipe é um tunelamento dos dados. serve para manipular e transformar os dados.
     .pipe(
       first(), //pega o primeiro valor emitido e completa a stream
-      delay(1000),
+      // delay(1000),
       tap(courses => console.log(courses))
     );
   }
