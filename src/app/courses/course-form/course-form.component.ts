@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { CoursesService } from '../services/courses.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Location } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, NonNullableFormBuilder, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+import { CoursesService } from '../services/courses.service';
 
 @Component({
   selector: 'app-course-form',
@@ -10,22 +11,23 @@ import { Location } from '@angular/common';
   styleUrls: ['./course-form.component.scss'],
 })
 export class CourseFormComponent implements OnInit {
-  form: UntypedFormGroup;
+
+  form = this.formBuilder.group({
+    name: [''],
+    category: [''],
+  });
 
   constructor(
-    private formBuilder: UntypedFormBuilder,
+    private formBuilder: NonNullableFormBuilder,
     private service: CoursesService,
     private snackBar: MatSnackBar,
     private location: Location
   ) {
-    this.form = this.formBuilder.group({
-      name: [null],
-      category: [null],
-    });
   }
 
   ngOnInit(): void {
     // TODO document why this method 'ngOnInit' is empty
+    //this.form.value.name = null; //Não pode iniciar com Null ou números e etc, somente com string...
   }
 
   onSubmit() {
